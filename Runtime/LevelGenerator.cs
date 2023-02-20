@@ -27,10 +27,6 @@ namespace Alper.PixelArtToLevelGenerator
         //[Button("GenerateLevel")]
         void GenerateLevel()
         {
-            var plane = GameObject.CreatePrimitive(PrimitiveType.Plane);
-            plane.transform.position = ((map.height-1) / 2f)*Vector3.forward+ ((map.width-1) / 2f)*Vector3.right;
-            plane.transform.localScale = new Vector3(map.width / 10f, 1, map.height / 10f);
-            plane.transform.parent = planeParent;
             for (int i = 0; i < map.width; i++)
             {
                 for (int j = 0; j < map.height; j++)
@@ -52,7 +48,14 @@ namespace Alper.PixelArtToLevelGenerator
                 }
             }
         }
+        void SetBackgroundPlane()
+        {
+            var plane = GameObject.CreatePrimitive(PrimitiveType.Plane);
+            plane.transform.position = ((map.height-1) / 2f)*Vector3.forward+ ((map.width-1) / 2f)*Vector3.right;
+            plane.transform.localScale = new Vector3(map.width / 10f, 1, map.height / 10f);
+            plane.transform.parent = planeParent;
+            var material = Resources.Load("Materials/PlaneMaterial") as Material;
+            plane.GetComponent<Renderer>().material = material;
+        }
     }
-
-
 }

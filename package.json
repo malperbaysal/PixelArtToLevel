@@ -1,9 +1,9 @@
 {
-"name":"com.alper411.pixelarttolevel",
+"name":"com.411Alper.PixelArtToLevel",
 "displayName": "Pixel Art To Level Tool",
-"version":"1.0.1",
+"version":"1.0.0",
 "unity": "2020.3",
-"description": "A tool that lets you to instantiate prefabs from pixel art. If you can't find where are the codes are look under the packages cutie ;)",
+"description": "A tool that lets you to instantiate prefabs from pixel art.",
 "author": {
     "name": "Alper Baysal",
     "email": "",
