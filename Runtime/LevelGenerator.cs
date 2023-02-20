@@ -54,8 +54,9 @@ namespace Alper.PixelArtToLevelGenerator
             plane.transform.position = ((map.height-1) / 2f)*Vector3.forward+ ((map.width-1) / 2f)*Vector3.right;
             plane.transform.localScale = new Vector3(map.width / 10f, 1, map.height / 10f);
             plane.transform.parent = planeParent;
-            var material = Resources.Load("Materials/PlaneMaterial") as Material;
+            var material = Resources.Load("Packages/PixelArtToLevel/Materials/PixelArtToLevel-PlaneMaterial") as Material;
             plane.GetComponent<Renderer>().material = material;
+            material.mainTextureScale= new Vector2(map.width/ 20f, map.height/ 20f);
         }
     }
 }
